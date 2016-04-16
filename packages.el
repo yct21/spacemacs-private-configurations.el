@@ -137,7 +137,6 @@
          (python . t)
          (emacs-lisp . t)
          (plantuml . t)
-         (elixir . t)
          (C . t)
          (ditaa . t)))
       )))
