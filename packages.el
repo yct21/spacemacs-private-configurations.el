@@ -38,6 +38,44 @@
       (add-to-list 'org-modules 'org-habit)
       (require 'org-habit)
 
+      ;; define the refile targets
+      (setq org-agenda-files (quote ("~/orlog" )))
+      (setq org-default-notes-file "~/orlog/gtd.org")
+
+      (with-eval-after-load 'org-agenda
+        (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
+        (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
+          "." 'spacemacs/org-agenda-transient-state/body)
+        )
+
+      (setq org-capture-templates
+            '(("t" "Todo" entry (file+headline "~/orlog/gtd.org" "Workspace")
+               "* TODO [#B] %?\n  %i\n"
+               :empty-lines 1)
+              ("n" "notes" entry (file+headline "~/orlog/notes.org" "Quick notes")
+               "* TODO [#C] %?\n  %i\n %U"
+               :empty-lines 1)
+              ("b" "Blog Ideas" entry (file+headline "~/orlog/notes.org" "Blog Ideas")
+               "* TODO [#B] %?\n  %i\n %U"
+               :empty-lines 1)
+              ("l" "links" entry (file+headline "~/orlog/notes.org" "Quick notes")
+               "* TODO [#C] %?\n  %i\n %a \n %U"
+               :empty-lines 1)))
+
+      ;;An entry without a cookie is treated just like priority ' B '.
+      ;;So when create new task, they are default 重要且紧急
+      (setq org-agenda-custom-commands
+            '(
+              ("w" . "Task")
+              ("wa" "Task: Urgent / Important" tags-todo "+PRIORITY=\"A\"")
+              ("wb" "Task: Not Urgent / Important" tags-todo "-Weekly-Monthly-Daily+PRIORITY=\"B\"")
+              ("wc" "Task: Urgent / Not Important" tags-todo "+PRIORITY=\"C\"")
+              ("b" "Blog" tags-todo "BLOG")
+              ("p" . "project")
+              ("pw" tags-todo "PROJECT+DREAM+CATEGORY=\"power grid\"")))
+
+      (define-key org-mode-map (kbd "s-p") 'org-priority)
+      (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
       (setq org-refile-use-outline-path 'file)
       (setq org-outline-path-complete-in-steps nil)
       (setq org-refile-targets
@@ -51,7 +89,6 @@
       (setq org-agenda-use-tag-inheritance nil) ;; 3-4x speedup
       (setq org-agenda-window-setup 'current-window)
       (setq org-log-done t)
-
 
       ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
       (setq org-todo-keywords
