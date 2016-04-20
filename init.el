@@ -26,16 +26,13 @@ values."
      auto-completion
      emacs-lisp
      git
+     dash
      github
      chrome
      markdown
      org
      prodigy
      search-engine
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
      ;; version-control
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -45,17 +42,17 @@ values."
      javascript
      erlang
      elixir
-     colors
+     (colors :variables
+             colors-enable-nyan-cat-progress-bar t)
      ranger
      gtags
+     pdf-tools
      (wakatime :variables
       wakatime-api-key  "44bcd124-1fb7-44a3-a7b6-aae4fecc969d"
       wakatime-cli-path "/usr/local/bin/wakatime")
      (spacemacs-layouts :variables layouts-enable-autosave t
                         layouts-autosave-delay 300)
      ;; eyebrowse
-     (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
      (git :variables
           git-magit-status-fullscreen t
           magit-push-always-verify nil
@@ -134,7 +131,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         ;; spacemacs-dark
+                         spacemacs-dark
                          ;; spacemacs-light
                          ;; solarized-light
                          ;; solarized-dark
