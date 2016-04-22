@@ -294,7 +294,8 @@ you should place you code here."
   (setq mac-option-modifier 'super
         mac-command-modifier 'meta
         mac-command-key-is-meta t
-        mac-option-key-is-meta nil)
+        mac-option-key-is-meta nil
+        system-uses-terminfo nil)
 
 
   "Configuration function.
