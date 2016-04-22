@@ -42,6 +42,7 @@ values."
      javascript
      erlang
      elixir
+     ruby
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      ranger
