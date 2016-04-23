@@ -13,6 +13,7 @@
   '(
     org-bullets
     org-download
+    org-journal
     (org :location built-in)
     )
 )
@@ -25,6 +26,12 @@
     :defer t
     :init
     (org-download-enable)))
+
+(defun spacemeow/init-org-journal ()
+  (use-package org-journal
+    :defer t
+    :init
+    (setq org-journal-dir "~/stf/")))
 
 (defun spacemeow/post-init-org ()
   (with-eval-after-load 'org
@@ -52,13 +59,13 @@
             '(("t" "Todo" entry (file+headline "~/orlog/gtd.org" "Workspace")
                "* TODO [#B] %?\n  %i\n"
                :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/orlog/notes.org" "Quick notes")
+              ("n" "notes" entry (file+headline "~/orlog/gtd.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %U"
                :empty-lines 1)
               ("b" "Blog Ideas" entry (file+headline "~/orlog/notes.org" "Blog Ideas")
                "* TODO [#B] %?\n  %i\n %U"
                :empty-lines 1)
-              ("l" "links" entry (file+headline "~/orlog/notes.org" "Quick notes")
+              ("l" "links" entry (file+headline "~/orlog/gtd.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
                :empty-lines 1)))
 
