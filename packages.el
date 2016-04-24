@@ -56,10 +56,10 @@
         )
 
       (setq org-capture-templates
-            '(("t" "Todo" entry (file+headline "~/orlog/gtd.org" "Workspace")
+            '(("t" "Todo" entry (file+headline "~/orlog/gtd.org" "Quick notes")
                "* TODO [#B] %?\n  %i\n"
                :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/orlog/gtd.org" "Quick notes")
+              ("n" "notes" entry (file+headline "~/orlog/notes.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %U"
                :empty-lines 1)
               ("b" "Blog Ideas" entry (file+headline "~/orlog/notes.org" "Blog Ideas")
