@@ -10,13 +10,11 @@
 ;;; License: GPLv3
 
 (defconst spacemeow-packages
-  '(
-    org-bullets
+  '(org-bullets
     org-download
     org-journal
     (org :location built-in)
-    prodigy
-    )
+    prodigy)
   )
 
 (defun spacemeow/post-init-org-bullets()
