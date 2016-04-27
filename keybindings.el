@@ -13,3 +13,4 @@
 
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (spacemacs/set-leader-keys "oh" 'hippie-expand)
+(define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
