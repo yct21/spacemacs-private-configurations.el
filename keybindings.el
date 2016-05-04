@@ -3,7 +3,7 @@
 ;; Copyright (c) 2015-2016 Chutian Yang
 ;;
 ;; Author: Chutian Yang <yct21@12tcy.com>
-;; URL: https://github.com/zilongshanren/spacemacs-private
+;; URL: https://github.com/yct21/spacemeow
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -14,3 +14,4 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (spacemacs/set-leader-keys "oh" 'hippie-expand)
 (define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
+(spacemacs/set-leader-keys "oj" 'org-journal-new-entry)
