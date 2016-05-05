@@ -34,7 +34,7 @@
 
 (defun spacemeow/insert-chrome-current-tab-url-as-org-link(link-description)
   "Get the URL of active tab of chrome, and insert it as an org link"
-  (interactive "sLink description")
+  (interactive "sLink description: ")
   (insert (format "[[%s][%s]]"
                   (spacemeow/retrieve-chrome-current-tab-url)
                   link-description)))
@@ -73,7 +73,7 @@ org-files and bookmarks"
       (setq basename (format-time-string "%Y%m%d_%H%M%S")))
   (setq fullpath
         (concat (file-name-directory (buffer-file-name))
-                "../images/posts/"
+                "../images/"
                 (file-name-base (buffer-file-name))
                 "_"
                 basename))
@@ -92,4 +92,4 @@ org-files and bookmarks"
               (shell-command-to-string resize-command-str)))
         (progn
           (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
-          (insert "\n"))
+          (insert "\n")))))
