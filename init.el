@@ -326,6 +326,8 @@ layers configuration."
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (spacemacs/set-leader-keys "rh" 'helm-resume)
   (spacemacs/set-leader-keys "ri" 'ivy-resume)
+  (company-quickhelp-mode -1)
+  (global-set-key (kbd "C-/") 'hippie-expand)
 
   ;; set configurations for tramp
   (setq tramp-default-user "yct21")
