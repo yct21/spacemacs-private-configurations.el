@@ -322,6 +322,10 @@ layers configuration."
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (spacemacs/set-leader-keys "rh" 'helm-resume)
   (spacemacs/set-leader-keys "ri" 'ivy-resume)
+
+  ;; set configurations for tramp
+  (setq tramp-default-user "yct21")
+  (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
