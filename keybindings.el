@@ -15,6 +15,6 @@
 (spacemacs/set-leader-keys "oh" 'hippie-expand)
 (define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
 (spacemacs/set-leader-keys "oj" 'org-journal-new-entry)
-(spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-dblock)
+(spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-all-dblocks)
 
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
