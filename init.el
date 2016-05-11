@@ -328,10 +328,12 @@ layers configuration."
   (spacemacs/set-leader-keys "ri" 'ivy-resume)
   (company-quickhelp-mode -1)
   (global-set-key (kbd "C-/") 'hippie-expand)
+  (setq-default global-visual-line-mode t)
 
   ;; set configurations for tramp
   (setq tramp-default-user "yct21")
   (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+  (setq ranger-override-dired t)
   )
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
