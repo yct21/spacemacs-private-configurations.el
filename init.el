@@ -48,6 +48,7 @@ values."
      erlang
      elixir
      ruby
+     ruby-on-rails
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      ranger
