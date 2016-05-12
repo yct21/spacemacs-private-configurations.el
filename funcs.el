@@ -93,3 +93,13 @@ org-files and bookmarks"
         (progn
           (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
           (insert "\n")))))
+
+;; Hooks
+(defun spacemeow//elixir-mode-hook ()
+  (company-quickhelp-mode -1))
+
+(defun spacemeow//alchemist-test-report-hook ()
+  (visual-line-mode +1))
+
+(add-hook 'elixir-mode-hook 'spacemeow//elixir-mode-hook)
+(add-hook 'alchemist-test-report-mode-hook 'spacemeow//alchemist-test-report-hook)
