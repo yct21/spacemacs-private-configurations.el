@@ -327,7 +327,7 @@ layers configuration."
   (spacemacs/set-leader-keys "rh" 'helm-resume)
   (spacemacs/set-leader-keys "ri" 'ivy-resume)
   (company-quickhelp-mode -1)
-  (global-set-key (kbd "C-/") 'hippie-expand)
+  (global-set-key (kbd "C-i") 'hippie-expand)
   (setq-default global-visual-line-mode t)
 
   ;; set configurations for tramp
