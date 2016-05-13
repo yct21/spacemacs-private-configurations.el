@@ -10,9 +10,7 @@
 
 (setq frame-title-format
       '("" " * "
-        (:eval (if org-clock-heading
-                   org-clock-heading
-                 "zzz"))
+        org-clock-heading
         " *   |    "
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name)) "%b"))))
