@@ -133,13 +133,6 @@
           (previous-line 2)
           (org-edit-src-code)))
 
-      (add-hook 'org-mode-hook '(lambda ()
-                                  ;; keybinding for editing source code blocks
-                                  ;; keybinding for inserting code blocks
-                                  (local-set-key (kbd "C-c i s")
-                                                 'spacemeow/org-insert-src-block)
-                                  ))
-
       ;;reset subtask
       (setq org-default-properties (cons "RESET_SUBTASKS" org-default-properties))
 

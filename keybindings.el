@@ -17,3 +17,4 @@
 (spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-all-dblocks)
 
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
+(spacemacs/set-leader-keys-for-major-mode 'org-mode "is" 'spacemeow/org-insert-src-block)
