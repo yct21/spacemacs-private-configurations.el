@@ -55,14 +55,8 @@
         )
 
       (setq org-capture-templates
-            '(("t" "Todo" entry (file+headline "~/orlog/gtd.org" "Quick notes")
+            '(("t" "Notes" entry (file+headline "~/orlog/gtd.org" "Quick notes")
                "* TODO [#B] %?\n  %i\n"
-               :empty-lines 1)
-              ("n" "notes" entry (file+headline "~/orlog/notes.org" "Quick notes")
-               "* TODO [#C] %?\n  %i\n %U"
-               :empty-lines 1)
-              ("b" "Blog Ideas" entry (file+headline "~/orlog/notes.org" "Blog Ideas")
-               "* TODO [#B] %?\n  %i\n %U"
                :empty-lines 1)
               ("l" "links" entry (file+headline "~/orlog/gtd.org" "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
@@ -80,7 +74,6 @@
               ("p" . "project")
               ("pw" tags-todo "PROJECT+DREAM+CATEGORY=\"power grid\"")))
 
-      (define-key org-mode-map (kbd "s-p") 'org-priority)
       (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
       (setq org-refile-use-outline-path 'file)
       (setq org-outline-path-complete-in-steps nil)
