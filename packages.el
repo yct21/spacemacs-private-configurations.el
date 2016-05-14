@@ -178,13 +178,4 @@
       )))
 
 (defun spacemeow/post-init-prodigy ()
-  (progn
-    ;; define service
-    (prodigy-define-service
-      :name "Electron Wechat"
-      :command "npm"
-      :args '("start")
-      :cwd "~/code/lab/electronic-wechat"
-      :tags '(app)
-      :kill-signal 'sigkill
-      :kill-process-buffer-on-stop t)))
+  (spacemeow//define-prodigy-services))

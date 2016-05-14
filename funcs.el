@@ -122,3 +122,20 @@ org-files and bookmarks"
         (indent-for-tab-command)))))
 
 (global-set-key (kbd "TAB") 'spacemeow/smart-tab)
+
+;;; prodigy services
+(defun spacemeow//define-prodigy-services ()
+  (prodigy-define-service
+    :name "rails-ac-react"
+    :command "bundle"
+    :args '("exec" "rails" "server")
+    :cwd "~/code/playground/rails-ac-react"
+    :tags '(rails react playground))
+  (prodigy-define-service
+    :name "Electron Wechat"
+    :command "npm"
+    :args '("start")
+    :cwd "~/code/lab/electronic-wechat"
+    :tags '(app)
+    :kill-signal 'sigkill
+    :kill-process-buffer-on-stop t))
