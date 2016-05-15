@@ -304,6 +304,7 @@ you should place you code here."
         mac-command-key-is-meta t
         mac-option-key-is-meta nil
         system-uses-terminfo nil)
+  (projectile-global-mode t)
 
 
   "Configuration function.
