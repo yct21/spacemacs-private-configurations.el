@@ -53,7 +53,7 @@
         (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
         (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
           "." 'spacemacs/org-agenda-transient-state/body)
-        (add-hook 'org-mode-hook (lambda () (org-indent-mode 1))))
+        )
 
       (setq org-capture-templates
             '(("t" "Notes" entry (file+headline "~/orlog/gtd.org" "Quick notes")
