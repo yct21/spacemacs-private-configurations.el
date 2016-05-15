@@ -21,9 +21,6 @@
     prodigy)
   )
 
-(defun spacemeow/post-init-org-bullets()
-  (setq org-bullets-bullet-list '("🐉" "🐠" "🐬" "🐤")))
-
 (defun spacemeow/init-org-download ()
   (use-package org-download
     :defer t
