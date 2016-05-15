@@ -322,6 +322,7 @@ layers configuration."
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook (lambda () (org-indent-mode t)) t)
 
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   (spacemacs/toggle-automatic-symbol-highlight-on)
