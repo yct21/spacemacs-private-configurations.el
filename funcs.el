@@ -58,7 +58,6 @@ org-files and bookmarks"
     (candidate-number-limit)
     (action . (("Open" . (lambda (x) (funcall x)))))))
 
-
 ;; Screenshot
 (defun spacemeow//insert-org-or-md-img-link (prefix imagename)
   (if (equal (file-name-extension (buffer-file-name)) "org")
@@ -94,34 +93,8 @@ org-files and bookmarks"
           (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
           (insert "\n")))))
 
-;; Hooks
-(defun spacemeow//elixir-mode-hook ()
-  (company-quickhelp-mode -1))
-
-(defun spacemeow//alchemist-test-report-hook ()
-  (visual-line-mode +1))
-
 (add-hook 'elixir-mode-hook 'spacemeow//elixir-mode-hook)
 (add-hook 'alchemist-test-report-mode-hook 'spacemeow//alchemist-test-report-hook)
-
-;; smart indent
-(defun spacemeow/smart-tab ()
-  "This smart tab is minibuffer compliant: it acts as usual in
-    the minibuffer. Else, if mark is active, indents region. Else if
-    point is at the end of a symbol, expands it. Else indents the
-    current line."
-  (interactive)
-  (if (minibufferp)
-      (unless (minibuffer-complete)
-        (hippie-expand nil))
-    (if mark-active
-        (indent-region (region-beginning)
-                       (region-end))
-      (if (looking-at "\\_>")
-          (hippie-expand nil)
-        (indent-for-tab-command)))))
-
-(global-set-key (kbd "TAB") 'spacemeow/smart-tab)
 
 ;;; prodigy services
 (defun spacemeow//define-prodigy-services ()
