@@ -77,6 +77,7 @@ values."
               chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     emoji
      spacemeow
      )
    ;; List of additional packages that will be installed without being
