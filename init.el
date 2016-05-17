@@ -30,7 +30,6 @@ values."
                       auto-completion-enable-snippets-in-popup t)
 
      emacs-lisp
-     git
      dash
      github
      chrome
