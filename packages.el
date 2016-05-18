@@ -20,7 +20,8 @@
   )
 
 (defconst spacemeow-additional-config-files
-  '("org-config"))
+  '("org-config"
+    "prodigy-config"))
 
 (mapc
  (function
@@ -33,6 +34,3 @@
     :defer t
     :init
     (setq org-journal-dir "~/stf/")))
-
-(defun spacemeow/post-init-prodigy ()
-  (spacemeow//define-prodigy-services))
