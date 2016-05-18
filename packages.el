@@ -19,6 +19,14 @@
     prodigy)
   )
 
+(defconst spacemeow-additional-config-files
+  '("org-config"))
+
+(mapc
+ (function
+  (lambda (file)
+    (load-file (format "%s%s.el" (file-name-directory load-file-name) file))))
+ spacemeow-additional-config-files)
 
 (defun spacemeow/init-org-journal ()
   (use-package org-journal
