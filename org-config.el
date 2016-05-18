@@ -10,13 +10,16 @@
 ;;; License: GPLv3
 
 (defun spacemeow/post-init-org ()
-  (spacemacs|disable-company org-mode)
-  (add-to-list 'org-modules 'org-habit)
+  (with-eval-after-load 'org
+    (spacemacs|disable-company org-mode)
+    (require 'org-compat)
+    (require 'org)
+    (add-to-list 'org-modules 'org-habit)
 
-  (spacemeow//init-org-agenda)
-  (spacemeow//init-org-todo)
-  (spacemeow//init-org-keybindings)
-  (spacemeow//set-org-bable-load-languages))
+    (spacemeow//init-org-agenda)
+    (spacemeow//init-org-todo)
+    (spacemeow//init-org-keybindings)
+    (spacemeow//init-org-bable-load-languages)))
 
 ;; http://wenshanren.org/?p=327
 ;; change it to helm
@@ -84,7 +87,7 @@
 
 (defun spacemeow//init-org-agenda ()
   (with-eval-after-load 'org-agenda
-    (setq org-agenda-files (quote ("~/orlog" )))
+    (setq org-agenda-files (quote ("~/orlog")))
 
     (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
     (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
@@ -103,7 +106,7 @@
     (setq org-agenda-use-tag-inheritance nil) ;; 3-4x speedup
     (setq org-agenda-window-setup 'current-window)))
 
-(defun spacemeow//set-org-bable-load-languages ()
+(defun spacemeow//init-org-bable-load-languages ()
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((perl . t)
