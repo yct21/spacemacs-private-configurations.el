@@ -16,12 +16,14 @@
 (defconst spacemeow-packages
   '(org-journal
     (org :location built-in)
-    prodigy)
+    prodigy
+    wakatime-mode)
   )
 
 (defconst spacemeow-additional-config-files
   '("org-config"
-    "prodigy-config"))
+    "prodigy-config"
+    "wakatime-config"))
 
 (mapc
  (function

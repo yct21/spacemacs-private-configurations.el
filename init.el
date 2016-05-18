@@ -52,10 +52,6 @@ values."
      ranger
      gtags
      pdf-tools
-     (wakatime :variables
-               global-wakatime-mode t
-               wakatime-api-key  "44bcd124-1fb7-44a3-a7b6-aae4fecc969d"
-               wakatime-cli-path "/usr/local/bin/wakatime")
      (spacemacs-layouts :variables layouts-enable-autosave t
                         layouts-autosave-delay 300)
      ;; eyebrowse

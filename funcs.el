@@ -10,7 +10,6 @@
 ;;; License: GPLv3
 (require 'cl)
 
-;; Retrive chrome current tab url
 (defun spacemeow/insert-chrome-current-tab-url()
   "Get the URL of the active tab of the first window"
   (interactive)
