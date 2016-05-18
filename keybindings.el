@@ -12,9 +12,6 @@
 (define-key global-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
 
 (global-set-key (kbd "C-c b") 'org-iswitchb)
-(define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
 (spacemacs/set-leader-keys "oj" 'org-journal-new-entry)
-(spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-all-dblocks)
 
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
-(spacemacs/set-leader-keys-for-major-mode 'org-mode "is" 'spacemeow/org-insert-src-block)
