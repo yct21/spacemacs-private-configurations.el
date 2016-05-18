@@ -48,8 +48,7 @@ values."
      elixir
      ruby
      ruby-on-rails
-     (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+     colors
      ranger
      gtags
      pdf-tools
@@ -76,7 +75,6 @@ values."
               chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     emoji
      spacemeow
      )
    ;; List of additional packages that will be installed without being
