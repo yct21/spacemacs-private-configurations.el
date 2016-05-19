@@ -8,10 +8,13 @@
 ;;
 ;;; License: GPLv3
 
+(defvar spacemeow-rescuetime-score -42.0 "Fetched productivity score from rescuetime.")
 (setq frame-title-format
       '("" " * "
         org-clock-heading
-        " *   |    "
+        " *   |  "
+        (:eval (format "%d" (truncate spacemeow-rescuetime-score)))
+        "  | "
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name)) "%b"))))
 

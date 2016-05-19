@@ -17,17 +17,20 @@
   '(org-journal
     (org :location built-in)
     prodigy
+    request
+    org-pomodoro
     wakatime-mode)
   )
 
 (defconst spacemeow-additional-config-files
-  '("org-config"
+  '("config.secret"
+    "org-config"
     "prodigy-config"
     "wakatime-config"
+    "fetch-rescuetime"
     "org-journal-config"))
 
 (mapc
- (function
   (lambda (file)
-    (load-file (format "%s%s.el" (file-name-directory load-file-name) file))))
- spacemeow-additional-config-files)
+    (load-file (format "%s%s.el" (file-name-directory load-file-name) file)))
+  spacemeow-additional-config-files)
