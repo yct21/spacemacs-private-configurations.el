@@ -12,6 +12,5 @@
 (define-key global-map (kbd "C-c y") 'youdao-dictionary-search-at-point+)
 
 (global-set-key (kbd "C-c b") 'org-iswitchb)
-(spacemacs/set-leader-keys "oj" 'org-journal-new-entry)
 
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))

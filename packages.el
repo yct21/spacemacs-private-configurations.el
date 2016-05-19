@@ -23,16 +23,11 @@
 (defconst spacemeow-additional-config-files
   '("org-config"
     "prodigy-config"
-    "wakatime-config"))
+    "wakatime-config"
+    "org-journal-config"))
 
 (mapc
  (function
   (lambda (file)
     (load-file (format "%s%s.el" (file-name-directory load-file-name) file))))
  spacemeow-additional-config-files)
-
-(defun spacemeow/init-org-journal ()
-  (use-package org-journal
-    :defer t
-    :init
-    (setq org-journal-dir "~/stf/")))
