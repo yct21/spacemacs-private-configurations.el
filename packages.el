@@ -27,6 +27,7 @@
     "org-config"
     "prodigy-config"
     "wakatime-config"
+    "fetch-wakatime"
     "fetch-rescuetime"
     "org-journal-config"))
 
