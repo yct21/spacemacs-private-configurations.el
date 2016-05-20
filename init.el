@@ -36,6 +36,7 @@ values."
      markdown
      org
      prodigy
+     clojure
      search-engine
      ;; version-control
      (syntax-checking :variables syntax-checking-enable-by-default nil)
