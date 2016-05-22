@@ -47,7 +47,7 @@ values."
      javascript
      erlang
      elixir
-     ruby
+     (ruby :variables ruby-version-manager 'rbenv)
      ruby-on-rails
      colors
      ranger
@@ -299,8 +299,6 @@ you should place you code here."
         mac-command-key-is-meta t
         mac-option-key-is-meta nil
         system-uses-terminfo nil)
-  (projectile-global-mode t)
-
 
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
