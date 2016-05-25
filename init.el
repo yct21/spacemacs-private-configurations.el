@@ -328,6 +328,7 @@ layers configuration."
 
   ;; set configurations for tramp
   (setq tramp-default-user "yct21")
+
   (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
   (setq ranger-override-dired t)
   )
