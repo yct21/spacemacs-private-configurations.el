@@ -19,6 +19,7 @@
     prodigy
     request
     org-pomodoro
+    evil
     wakatime-mode)
   )
 
