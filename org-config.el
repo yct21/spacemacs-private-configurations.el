@@ -18,6 +18,7 @@
 
     (spacemeow//init-org-agenda)
     (spacemeow//init-org-todo)
+    (spacemeow//init-org-pomodoro)
     (spacemeow//init-org-keybindings)
     (spacemeow//init-org-bable-load-languages)))
 
@@ -105,6 +106,11 @@
     (setq org-agenda-inhibit-startup t)       ;; ~50x speedup
     (setq org-agenda-use-tag-inheritance nil) ;; 3-4x speedup
     (setq org-agenda-window-setup 'current-window)))
+
+(defun spacemeow//init-org-pomodoro ()
+  (with-eval-after-load 'org-pomodoro
+    (add-hook 'org-pomodoro-finished-hook #'(lambda() (spacemeow/display-system-notification "Pomodoro finished" "Get a rest.")))
+    (add-hook 'org-pomodoro-break-finished-hook #'(lambda() (spacemeow/display-system-notification "Break finished" "Come on!")))))
 
 (defun spacemeow//init-org-bable-load-languages ()
   (org-babel-do-load-languages

@@ -92,5 +92,8 @@ org-files and bookmarks"
           (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
           (insert "\n")))))
 
-(add-hook 'elixir-mode-hook 'spacemeow//elixir-mode-hook)
-(add-hook 'alchemist-test-report-mode-hook 'spacemeow//alchemist-test-report-hook)
+(defun spacemeow/display-system-notification (title content)
+  (do-applescript (format
+                   "display notification \"%s\" with title \"%s\""
+                   content
+                   title)))
