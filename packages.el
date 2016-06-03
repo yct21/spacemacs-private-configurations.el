@@ -20,8 +20,8 @@
     request
     org-pomodoro
     evil
-    wakatime-mode)
-  )
+    wakatime-mode
+    multi-term))
 
 (defconst spacemeow-additional-config-files
   '("config.secret"
@@ -30,6 +30,7 @@
     "wakatime-config"
     "fetch-wakatime"
     "fetch-rescuetime"
+    "multi-term-config"
     "org-journal-config"))
 
 (mapc

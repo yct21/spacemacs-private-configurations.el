@@ -66,7 +66,7 @@ values."
           magit-revision-show-gravatars nil)
      (shell :variables
             shell-default-position 'full
-            shell-default-shell 'ansi-term
+            shell-default-shell 'multi-term
             shell-default-term-shell "/bin/zsh")
      (chinese :variables
               chinese-enable-fcitx t
