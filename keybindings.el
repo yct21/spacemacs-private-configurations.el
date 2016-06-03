@@ -14,3 +14,5 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
+
+(spacemacs/set-leader-keys "oi" 'spacemeow/capture-screenshot)
