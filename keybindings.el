@@ -16,3 +16,5 @@
 (spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
 
 (spacemacs/set-leader-keys "oi" 'spacemeow/capture-screenshot)
+
+(spacemacs/set-leader-keys "l" 'evil-avy-goto-char)
