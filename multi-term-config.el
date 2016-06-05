@@ -6,9 +6,10 @@
 (defun spacemeow//define-multi-term ()
   (spacemacs/set-leader-keys "'" 'spacemeow/select-term)
   (spacemacs/set-leader-keys-for-major-mode 'term-mode "r" 'spacemeow/rename-term-buffer)
-  (spacemacs/set-leader-keys-for-major-mode 'term-mode "e" 'spacemeow/copy-last-command-to-edit-buffer)
   (spacemacs/set-leader-keys-for-major-mode 'term-mode "k" '(lambda () (interactive) (term-send-raw-string "\C-u")))
-  (spacemacs/set-leader-keys-for-major-mode 'term-mode "y" 'spacemeow/paste-command-from-edit-buffer))
+  (spacemacs/set-leader-keys-for-major-mode 'term-mode "e" 'spacemeow/copy-last-command-to-edit-buffer)
+  (spacemacs/set-leader-keys-for-major-mode 'term-mode "y" 'spacemeow/paste-command-from-edit-buffer)
+  (define-key term-mode-map (kbd "C-f") 'spacemeow/adjust-cursor))
 
 
 (defun spacemeow/select-term (selected-term-buffer)
@@ -49,3 +50,12 @@
       (setq edited-command (buffer-string)))
     (term-send-raw-string "\C-u")
     (term-send-raw-string edited-command)))
+
+(defun spacemeow/adjust-cursor ()
+  "Adjust cursor to corrct position."
+  (interactive)
+  (goto-char (point-max))
+  (beginning-of-line)
+  (while (not (char-equal (char-after) ?$))
+    (beginning-of-line 1))
+  (forward-char))
