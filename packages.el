@@ -21,6 +21,7 @@
     org-pomodoro
     evil
     wakatime-mode
+    cider
     multi-term))
 
 (defconst spacemeow-additional-config-files
@@ -29,6 +30,7 @@
     "prodigy-config"
     "wakatime-config"
     "fetch-wakatime"
+    "cider-config"
     "fetch-rescuetime"
     "multi-term-config"
     "org-journal-config"))
