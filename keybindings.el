@@ -18,3 +18,5 @@
 (spacemacs/set-leader-keys "oi" 'spacemeow/capture-screenshot)
 
 (spacemacs/set-leader-keys "l" 'evil-avy-goto-char)
+
+(spacemacs/set-leader-keys-for-major-mode 'ruby-mode "e" 'spacemeow/seeing-is-believing)
