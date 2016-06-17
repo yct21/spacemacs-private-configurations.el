@@ -48,6 +48,7 @@ values."
      erlang
      elixir
      (ruby :variables ruby-version-manager 'rbenv)
+     (c-c++ :variables c-c++-enable-clang-support t)
      ruby-on-rails
      colors
      ranger
