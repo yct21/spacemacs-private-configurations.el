@@ -28,7 +28,9 @@ Optional FLAGS are passed to the seeing_is_believing command."
     (end-of-line)
     (insert " # =>")))
 
-(spacemacs/set-leader-keys-for-major-mode 'ruby-mode "ee" 'spacemeow/seeing-is-believing-run)
-(spacemacs/set-leader-keys-for-major-mode 'ruby-mode "eE" 'spacemeow/seeing-is-believing-run-as-xmpfilter)
-(spacemacs/set-leader-keys-for-major-mode 'ruby-mode "et" 'spacemeow/seeing-is-believing-mark-current-line-for-xmpfilter)
-(spacemacs/set-leader-keys-for-major-mode 'ruby-mode "ec" 'spacemeow/seeing-is-believing-clear)
+
+(with-eval-after-load 'ruby-mode
+  (progn (spacemacs/set-leader-keys-for-major-mode 'ruby-mode "ee" 'spacemeow/seeing-is-believing-run)
+         (spacemacs/set-leader-keys-for-major-mode 'ruby-mode "eE" 'spacemeow/seeing-is-believing-run-as-xmpfilter)
+         (spacemacs/set-leader-keys-for-major-mode 'ruby-mode "et" 'spacemeow/seeing-is-believing-mark-current-line-for-xmpfilter)
+         (spacemacs/set-leader-keys-for-major-mode 'ruby-mode "ec" 'spacemeow/seeing-is-believing-clear)))

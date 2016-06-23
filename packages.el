@@ -27,8 +27,8 @@
 (defconst spacemeow-additional-config-files
   '("config.secret"
     "org-config"
-    "seeing-is-believing-config"
     "prodigy-config"
+    "seeing-is-believing-config"
     "wakatime-config"
     "fetch-wakatime"
     "cider-config"
