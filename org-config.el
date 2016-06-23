@@ -81,6 +81,7 @@
   (setq org-tags-match-list-sublevels nil))
 
 (defun spacemeow//init-org-keybindings ()
+  (spacemacs/set-leader-keys "aop" 'org-pomodoro)
   (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
   (define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-all-dblocks)

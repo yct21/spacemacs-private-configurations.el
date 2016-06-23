@@ -22,3 +22,5 @@
 (spacemacs/set-leader-keys "ot" 'spacemacs/toggle-transparency)
 
 (global-unset-key (kbd "C-\\"))
+
+(spacemacs/set-leader-keys-for-major-mode 'inferior-emacs-lisp-mode "b" 'ielm-change-working-buffer)
