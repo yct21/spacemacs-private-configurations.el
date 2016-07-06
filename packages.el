@@ -22,6 +22,7 @@
     evil
     wakatime-mode
     cider
+    wttrin
     multi-term))
 
 (defconst spacemeow-additional-config-files
@@ -32,6 +33,7 @@
     "wakatime-config"
     "fetch-wakatime"
     "cider-config"
+    "wttrin-config"
     "fetch-rescuetime"
     "multi-term-config"
     "org-journal-config"))
