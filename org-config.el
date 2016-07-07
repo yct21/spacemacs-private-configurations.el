@@ -86,6 +86,7 @@
   (define-key org-mode-map (kbd "C-c L") 'spacemeow/insert-chrome-current-tab-url-as-org-link)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "u" 'org-update-all-dblocks)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "," 'org-priority)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "oi" 'org-toggle-inline-images)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "is" 'spacemeow/org-insert-src-block))
 
 (defun spacemeow//init-org-agenda ()
