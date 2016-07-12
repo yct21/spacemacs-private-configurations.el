@@ -12,12 +12,11 @@
 (defvar spacemeow-wakatime-total " NA " "Fetched wakatime summary")
 (defun spacemacs//unset-scroll-margin ())
 (setq frame-title-format
-      '("" " * "
-        org-clock-heading
-        " *   |  "
-        (:eval (format "%d" (truncate spacemeow-rescuetime-score)))
-        " -"
-        spacemeow-wakatime-total
+      '(""
+        (:eval (if org-clock-current-task
+                   (format "* %s *" org-clock-current-task)
+                 "* IDLE *"))
+        org-clock-current-task
         " | "
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name)) "%b"))))
