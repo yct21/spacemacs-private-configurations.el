@@ -16,7 +16,6 @@
         (:eval (if org-clock-current-task
                    (format "* %s *" org-clock-current-task)
                  "* IDLE *"))
-        org-clock-current-task
         " | "
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name)) "%b"))))
