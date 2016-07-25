@@ -30,3 +30,5 @@
   ("42smly" "☺")))
 
 (setq user-mail-address "yct21@12tcy.com")
+
+(setq evil-shift-width 2)
