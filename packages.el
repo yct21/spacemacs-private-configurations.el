@@ -18,7 +18,7 @@
     (org :location built-in)
     prodigy
     request
-    org-pomodoro
+    org-octopress
     evil
     wakatime-mode
     cider
@@ -34,6 +34,7 @@
     "fetch-wakatime"
     "cider-config"
     "wttrin-config"
+    "org-octopress-config"
     "fetch-rescuetime"
     "multi-term-config"
     "org-journal-config"))
