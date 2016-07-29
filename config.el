@@ -14,9 +14,8 @@
 (setq frame-title-format
       '(""
         (:eval (if org-clock-current-task
-                   (format "* %s *" org-clock-current-task)
-                 "* IDLE *"))
-        " | "
+                   (format "* %s * ||-> %s <-||" org-clock-current-task (/ org-pomodoro-countdown 60))
+                 "* IDLE * | "))
         (:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name)) "%b"))))
 
