@@ -16,11 +16,15 @@
     (require 'org)
     (add-to-list 'org-modules 'org-habit)
 
+    (spacemeow//config-org)
     (spacemeow//init-org-agenda)
     (spacemeow//init-org-todo)
     (spacemeow//init-org-pomodoro)
     (spacemeow//init-org-keybindings)
     (spacemeow//init-org-bable-load-languages)))
+
+(defun spacemeow//config-org ()
+  (setq org-M-RET-may-split-line '((default . nil))))
 
 ;; http://wenshanren.org/?p=327
 ;; change it to helm
