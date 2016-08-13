@@ -19,7 +19,11 @@
 
 (spacemacs/set-leader-keys "l" 'evil-avy-goto-char)
 
+(spacemacs/set-leader-keys "L" 'evil-avy-goto-line)
+
 (spacemacs/set-leader-keys "ot" 'spacemacs/toggle-transparency)
+
+(spacemacs/set-leader-keys "or" 'revert-buffer)
 
 (global-unset-key (kbd "C-\\"))
 
