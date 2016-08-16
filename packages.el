@@ -21,25 +21,11 @@
     org-octopress
     evil
     wakatime-mode
+    multiple-cursors
     cider
     wttrin
+    hydra
     multi-term))
 
-(defconst spacemeow-additional-config-files
-  '("config.secret"
-    "org-config"
-    "prodigy-config"
-    "seeing-is-believing-config"
-    "wakatime-config"
-    "fetch-wakatime"
-    "cider-config"
-    "wttrin-config"
-    "org-octopress-config"
-    "fetch-rescuetime"
-    "multi-term-config"
-    "org-journal-config"))
-
-(mapc
-  (lambda (file)
-    (load-file (format "%s%s.el" (file-name-directory load-file-name) file)))
-  spacemeow-additional-config-files)
+(dolist (file (directory-files (format "%s%s" (file-name-directory load-file-name) "package-configurations") t "[^\.].*\.el$"))
+  (load file))
