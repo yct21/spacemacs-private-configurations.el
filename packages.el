@@ -25,6 +25,14 @@
     lispy
     multi-term))
 
+(defconst spacemeow--directories
+  '("package-configurations"))
 
-(dolist (file (directory-files (format "%s%s" (file-name-directory load-file-name) "package-configurations") t "[^\.].*\.el$"))
-  (load file))
+;; Who needs autoload...
+(dolist (directory spacemeow--directories)
+  (let ((directory-full-name (format "%s%s"
+                                     (file-name-directory load-file-name)
+                                     directory))
+        (file-regex "[^\.].*\.el$"))
+    (dolist (file (directory-files directory-full-name t file-regex))
+      (load-file file))))
