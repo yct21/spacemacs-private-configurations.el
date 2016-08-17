@@ -9,10 +9,6 @@
 ;;
 ;;; License: GPLv3
 
-(setq package-archives '(("gnu"   . "http://elpa.zilongshanren.com/gnu/")
-                         ("melpa" . "http://elpa.zilongshanren.com/melpa/")
-                         ("org" . "http://elpa.zilongshanren.com/org/")))
-
 (defconst spacemeow-packages
   '(org-journal
     (org :location built-in)
