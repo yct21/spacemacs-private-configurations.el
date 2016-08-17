@@ -23,9 +23,12 @@
     wakatime-mode
     multiple-cursors
     cider
+    (spacemeow-modeline :location built-in)
     wttrin
     hydra
+    lispy
     multi-term))
+
 
 (dolist (file (directory-files (format "%s%s" (file-name-directory load-file-name) "package-configurations") t "[^\.].*\.el$"))
   (load file))
