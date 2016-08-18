@@ -22,11 +22,12 @@
     (spacemeow-modeline :location built-in)
     wttrin
     hydra
-    lispy
+    lispyville
     multi-term))
 
 (defconst spacemeow--directories
-  '("package-configurations"))
+  '("package-configurations"
+    "features"))
 
 
 
