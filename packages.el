@@ -19,7 +19,6 @@
     wakatime-mode
     multiple-cursors
     cider
-    (spacemeow-modeline :location built-in)
     wttrin
     hydra
     lispyville
