@@ -8,9 +8,6 @@
 ;;
 ;;; License: GPLv3
 
-(defvar spacemeow-rescuetime-score -42.0 "Fetched productivity score from rescuetime.")
-(defvar spacemeow-wakatime-total " NA " "Fetched wakatime summary")
-(defun spacemacs//unset-scroll-margin ())
 (setq frame-title-format
       '(""
         (:eval (if org-clock-current-task
