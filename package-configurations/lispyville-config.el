@@ -22,4 +22,5 @@
                                 additional-movement
                                 slurp/barf-lispy
                                 additional
-                                mark))))
+                                mark))
+    (spacemacs/set-leader-keys "o." 'lispyville-mode)))
