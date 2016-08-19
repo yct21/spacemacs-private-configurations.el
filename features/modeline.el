@@ -1,7 +1,7 @@
 ;; Configurations for modeline / headline / frame title
 
-(setq-default mode-line-misc-info
-              (assq-delete-all 'which-func-mode mode-line-misc-info))
+;; (setq-default mode-line-misc-info
+;;               (assq-delete-all 'which-func-mode mode-line-misc-info))
 
 (defun spacemeow//mode-line-unicode-number (str)
   "Return a nice unicode representation of a single-digit number STR."
@@ -63,82 +63,101 @@
 
 (defun spacemeow//mode-line-window-number ()
   '(:eval (propertize
-          (spacemeow//window-number)
-          'face
-          'font-lock-type-face)))
+           (spacemeow//window-number)
+           'face
+           'font-lock-type-face)))
 
 (defun spacemeow//modeline-buffer-name ()
   '(:eval (propertize "%b " 'face 'font-lock-keyword-face
                       'help-echo (buffer-file-name))))
 
 (defun spacemeow//modeline-buffer-status ()
-  " ["
-  ;; insert vs overwrite mode, input-method in a tooltip
-  '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-                      'face 'font-lock-preprocessor-face
-                      'help-echo (concat "Buffer is in "
-                                         (if overwrite-mode
-                                             "overwrite"
-                                           "insert") " mode")))
+  (list
+   " ["
+   ;; insert vs overwrite mode, input-method in a tooltip
+   '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
+                       'face 'font-lock-preprocessor-face
+                       'help-echo (concat "Buffer is in "
+                                          (if overwrite-mode
+                                              "overwrite"
+                                            "insert") " mode")))
 
-  ;; was this buffer modified since the last save?
-  '(:eval (when (buffer-modified-p)
-            (concat "," (propertize "Mod"
-                                    'face 'font-lock-warning-face
-                                    'help-echo "Buffer has been modified"))))
+   ;; was this buffer modified since the last save?
+   '(:eval (when (buffer-modified-p)
+             (concat "," (propertize "Mod"
+                                     'face 'font-lock-warning-face
+                                     'help-echo "Buffer has been modified"))))
 
-  ;; is this buffer read-only?
-  '(:eval (when buffer-read-only
-            (concat "," (propertize "RO"
-                                    'face 'font-lock-type-face
-                                    'help-echo "Buffer is read-only"))))
-  "] ")
+   ;; is this buffer read-only?
+   '(:eval (when buffer-read-only
+             (concat "," (propertize "RO"
+                                     'face 'font-lock-type-face
+                                     'help-echo "Buffer is read-only"))))
+   "]"))
 
 (defun spacemeow//modeline-cursor-relative-position ()
-  "["
-  (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-  "/"
-  (propertize "%I" 'face 'font-lock-constant-face) ;; size
-  "] ")
+  (list
+   "["
+   (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+   "/"
+   (propertize "%I" 'face 'font-lock-constant-face) ;; size
+   "]"))
 
 (defun spacemeow//modeline-major-mode ()
   '(:eval (propertize "%m" 'face 'font-lock-string-face
-                     'help-echo buffer-file-coding-system)))
+                      'help-echo buffer-file-coding-system)))
 
-(setq-default mode-line-format
-              (list
-               " %1"
-               (spacemeow//mode-line-window-number)
-               "%1 "
-               (spacemeow//modeline-buffer-name)
-               (spacemeow//modeline-buffer-status)
-               anzu--mode-line-format
-               (spacemeow//modeline-major-mode)
-               "%1 "
-               (spacemeow//modeline-flycheck)
-               "%1 "
-               '(:eval evil-mode-line-tag)
-               ;; minor modes
-               '(:eval (when (> (window-width) 120)
-                         minor-mode-alist))
-               " "
-               ;; git info
-               '(:eval (when (> (window-width) 120)
-                         `(vc-mode vc-mode)))
-               " "
-               ;; global-mode-string goes in mode-line-misc-info
-               mode-line-misc-info
-               (spacemeow//modeline-fill 'mode-line 20)
-               ;; line and column
-               "(" ;; '%02' to set to 2 chars at least; prevents flickering
-               (propertize "%02l" 'face 'font-lock-type-face) ","
-               (propertize "%02c" 'face 'font-lock-type-face)
-               ") "
-               '(:eval (spacemeow//modeline-buffer-encoding-abbrev))
-               mode-line-end-spaces
-               ;; add the time, with the date and the emacs uptime in the tooltip
-               ;; '(:eval (propertize (format-time-string "%H:%M")
-               ;;                     'help-echo
-               ;;                     (concat (format-time-string "%c; ")
-               ;;                             (emacs-uptime "Uptime:%hh"))))
-               ))
+(defun spacemeow/init-spacemeow-modeline ()
+  (with-eval-after-load 'window-numbering
+    (defun window-numbering-install-mode-line (&optional position)
+      "Disable the origin window number in modeline. The display is handled below."))
+
+  (setq-default mode-line-format
+                (list
+                 "%1 "
+                 (spacemeow//mode-line-window-number)
+                 "%1 "
+                 (spacemeow//modeline-buffer-status)
+                 '(:eval evil-mode-line-tag)
+                 '(:eval
+                   (when (bound-and-true-p anzu--mode-line-format)
+                     anzu--mode-line-format))
+
+                 "%1"
+                 (spacemeow//modeline-flycheck)
+                 "%1"
+                 ;; minor modes
+                 '(:eval (when (> (window-width) 120)
+                           minor-mode-alist))
+
+                 (spacemeow//modeline-fill 'mode-line 42)
+                 "["
+                 (spacemeow//modeline-major-mode)
+                 "]"
+                 (spacemeow//modeline-cursor-relative-position)
+                 ;; line and column
+                 "[" ;; '%02' to set to 2 chars at least; prevents flickering
+                 (propertize "%02l" 'face 'font-lock-type-face) ":"
+                 (propertize "%02c" 'face 'font-lock-type-face)
+                 "]"
+                 "["
+                 '(:eval (spacemeow//modeline-buffer-encoding-abbrev))
+                 "]"
+                 mode-line-end-spaces))
+
+  (setq-default header-line-format
+                (list
+                 "%1 "
+                 ;; org-gtd-items
+                 '(:evil
+                   (when (bound-and-true-p org-pomodoro-mode-line)
+                     org-pomodoro-mode-line))
+
+                 (spacemeow//modeline-buffer-name)
+                 `(vc-mode vc-mode)))
+
+  (setq-default frame-title-format
+                '(""
+                  (:eval (if (buffer-file-name)
+                             (abbreviate-file-name (buffer-file-name))
+                           "%b")))))

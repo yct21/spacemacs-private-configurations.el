@@ -12,6 +12,7 @@
 (defconst spacemeow-packages
   '(org-journal
     (org :location built-in)
+    (spacemeow-modeline :location built-in)
     prodigy
     request
     org-octopress

@@ -8,14 +8,6 @@
 ;;
 ;;; License: GPLv3
 
-(setq frame-title-format
-      '(""
-        (:eval (if org-clock-current-task
-                   (format "* %s * ||-> %s <-||" org-clock-current-task (/ org-pomodoro-countdown 60))
-                 "* IDLE * | "))
-        (:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name)) "%b"))))
-
 (define-abbrev-table 'global-abbrev-table '(
   ;; math/unicode symbols
   ("42em" "yct21@12tcy.com")
