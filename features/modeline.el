@@ -1,8 +1,5 @@
 ;; Configurations for modeline / headline / frame title
 
-;; (setq-default mode-line-misc-info
-;;               (assq-delete-all 'which-func-mode mode-line-misc-info))
-
 (defun spacemeow//mode-line-unicode-number (str)
   "Return a nice unicode representation of a single-digit number STR."
   (cond
@@ -68,7 +65,7 @@
            'font-lock-type-face)))
 
 (defun spacemeow//modeline-buffer-name ()
-  '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+  '(:eval (propertize "<%b>" 'face 'font-lock-keyword-face
                       'help-echo (buffer-file-name))))
 
 (defun spacemeow//modeline-buffer-status ()
@@ -102,6 +99,14 @@
    "/"
    (propertize "%I" 'face 'font-lock-constant-face) ;; size
    "]"))
+
+(defun spacemeow//modeline-org-gtd ()
+  (list
+   ""
+   '(:eval (when (bound-and-true-p org-clock-current-task)
+            (format "[%s]" org-clock-current-task)))
+   '(:eval (when (bound-and-true-p org-pomodoro-mode-line)
+            org-pomodoro-mode-line))))
 
 (defun spacemeow//modeline-major-mode ()
   '(:eval (propertize "%m" 'face 'font-lock-string-face
@@ -137,24 +142,33 @@
                  (spacemeow//modeline-cursor-relative-position)
                  ;; line and column
                  "[" ;; '%02' to set to 2 chars at least; prevents flickering
-                 (propertize "%02l" 'face 'font-lock-type-face) ":"
+                 (propertize "%l" 'face 'font-lock-type-face) ":"
                  (propertize "%02c" 'face 'font-lock-type-face)
                  "]"
                  "["
                  '(:eval (spacemeow//modeline-buffer-encoding-abbrev))
-                 "]"
+                "]"
                  mode-line-end-spaces))
 
   (setq-default header-line-format
                 (list
                  "%1 "
                  ;; org-gtd-items
+                 ;; '(:evil (format "aaa[%s]%s" "teesteee" "meow"))
+                 ;; '(:evil
+                 ;;   (when (bound-and-true-p org-clock-current-task)
+                 ;;     (format "[%s]" org-clock-current-task)))
                  '(:evil
                    (when (bound-and-true-p org-pomodoro-mode-line)
                      org-pomodoro-mode-line))
-
+                 "%1 "
                  (spacemeow//modeline-buffer-name)
-                 `(vc-mode vc-mode)))
+                 `(vc-mode vc-mode)
+                 "%1 "
+                 '(:eval (when (bound-and-true-p org-clock-current-task)
+                           (propertize (format "[%s]" org-clock-current-task)
+                                       'face 'font-lock-string-face
+                                       'help-echo "Come on!")))))
 
   (setq-default frame-title-format
                 '(""
