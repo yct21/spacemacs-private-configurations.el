@@ -23,7 +23,7 @@
      (clojure :variables clojure-enable-fancify-symbols t)
      search-engine
      ;; version-control
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default t)
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
      html
