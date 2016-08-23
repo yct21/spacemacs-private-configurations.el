@@ -21,7 +21,6 @@
     multiple-cursors
     cider
     wttrin
-    hydra
     lispyville
     multi-term))
 
