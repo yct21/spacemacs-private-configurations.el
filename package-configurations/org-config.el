@@ -116,6 +116,7 @@
 
 (defun spacemeow//init-org-pomodoro ()
   (with-eval-after-load 'org-pomodoro
+    (add-hook 'org-pomodoro-started-hook 'spacemeow//org-pomodoro-write-start-time)
     (add-hook 'org-pomodoro-finished-hook #'(lambda() (spacemeow/display-system-notification "Pomodoro finished" "Get a rest.")))
     (add-hook 'org-pomodoro-break-finished-hook #'(lambda() (spacemeow/display-system-notification "Break finished" "Come on!")))))
 
@@ -131,6 +132,11 @@
      (plantuml . t)
      (C . t)
      (ditaa . t))))
+
+(defun spacemeow//org-pomodoro-write-start-time ()
+  (let ((file-name "/Users/yct21/temp/.pomodoro"))
+    (with-temp-file file-name
+      (insert (current-time-string)))))
 
 ;;; Not used currently
 (defun spacemeow//set-reset-subtree-functions ()
