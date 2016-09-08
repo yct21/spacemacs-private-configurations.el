@@ -73,6 +73,7 @@
    dotspacemacs-startup-lists '(bookmarks projects)
    dotspacemacs-startup-recent-list-size 5
    dotspacemacs-scratch-mode 'emacs-lisp-mode
+   osx-use-dictionary-app nil
    dotspacemacs-themes '(
                          solarized-light
                          solarized-dark
