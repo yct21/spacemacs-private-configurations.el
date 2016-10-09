@@ -15,10 +15,12 @@
     (spacemeow-modeline :location built-in)
     prodigy
     request
+    4clojure
     org-octopress
     evil
     wakatime-mode
     multiple-cursors
+    helm-github-stars
     cider
     wttrin
     lispyville
