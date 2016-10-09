@@ -8,5 +8,4 @@
       (setq org-octopress-directory-org-top "~/12tcy/source")
       (setq org-octopress-directory-org-posts "~/12tcy/source/_orgs")
       (setq org-octopress-setup-file "~/12tcy/setupfile.org")
-      (spacemacs/set-leader-keys-for-major-mode 'org-mode "oe" 'org-export-dispatch))
-  )
+      (spacemacs/set-leader-keys-for-major-mode 'org-mode "oe" 'org-export-dispatch)))

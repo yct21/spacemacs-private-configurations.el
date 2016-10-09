@@ -22,7 +22,9 @@
      prodigy
      (clojure :variables clojure-enable-fancify-symbols t)
      search-engine
-     ;; version-control
+     version-control
+     restclient
+     elm
      (syntax-checking :variables syntax-checking-enable-by-default t)
      (spell-checking :variables spell-checking-enable-by-default nil)
      yaml
