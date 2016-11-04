@@ -30,7 +30,9 @@
      yaml
      html
      command-log
-     javascript
+     (javascript :variables
+                 js2-basic-offset 2
+                 js-indent-level 2)
      erlang
      elixir
      (ruby :variables ruby-version-manager 'rbenv)
