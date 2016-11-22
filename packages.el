@@ -24,6 +24,7 @@
     wttrin
     elm-mode
     lispyville
+    ruby-guard
     multi-term))
 
 (defconst spacemeow--directories
