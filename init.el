@@ -4,7 +4,6 @@
    dotspacemacs-configuration-layer-path '("~/code/emacs/")
    dotspacemacs-configuration-layers
    '(
-     helm
      ivy
      (python :variables
              python-test-runner '(nose pytest))
