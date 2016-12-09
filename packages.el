@@ -14,7 +14,6 @@
     (org :location built-in)
     (spacemeow-modeline :location built-in)
     prodigy
-    request
     4clojure
     org-octopress
     wakatime-mode
