@@ -12,6 +12,9 @@
 (defconst spacemeow-packages
   '(org-journal
     (org :location built-in)
+    (emmet-mode :location (recipe
+                           :fetcher github
+                           :repo "yct21/emmet-mode-css-module"))
     (spacemeow-modeline :location built-in)
     prodigy
     4clojure
