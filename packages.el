@@ -17,6 +17,7 @@
                            :repo "yct21/emmet-mode-css-module"))
     (spacemeow-modeline :location built-in)
     prodigy
+    ivy
     4clojure
     flycheck
     org-octopress
