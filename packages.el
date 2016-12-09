@@ -15,6 +15,7 @@
     (spacemeow-modeline :location built-in)
     prodigy
     4clojure
+    flycheck
     org-octopress
     wakatime-mode
     multiple-cursors
