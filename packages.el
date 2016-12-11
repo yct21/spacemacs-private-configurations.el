@@ -19,6 +19,7 @@
     prodigy
     ivy
     4clojure
+    evil
     flycheck
     org-octopress
     wakatime-mode
