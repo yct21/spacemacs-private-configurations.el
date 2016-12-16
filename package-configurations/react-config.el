@@ -13,5 +13,4 @@
                         (expand-file-name ".eslintrc.js"
                                           root))))
     (when (and eslint (file-executable-p eslint) (file-exists-p eslintrc))
-      (setq-local flycheck-javascript-eslint-executable eslint)
-      (setq-local flycheck-eslintrc eslintrc))))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
