@@ -17,10 +17,6 @@
 
 (spacemacs/set-leader-keys "oi" 'spacemeow/capture-screenshot)
 
-(spacemacs/set-leader-keys "l" 'evil-avy-goto-char)
-
-(spacemacs/set-leader-keys "L" 'evil-avy-goto-line)
-
 (spacemacs/set-leader-keys "or" 'revert-buffer)
 
 (global-unset-key (kbd "C-\\"))
