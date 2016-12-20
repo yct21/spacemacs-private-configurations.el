@@ -158,20 +158,17 @@
                  ;; '(:evil
                  ;;   (when (bound-and-true-p org-clock-current-task)
                  ;;     (format "[%s]" org-clock-current-task)))
-                 '(:evil
-                   (when (bound-and-true-p org-pomodoro-mode-line)
-                     org-pomodoro-mode-line))
                  "%1 "
                  (spacemeow//modeline-buffer-name)
                  `(vc-mode vc-mode)
-                 "%1 "
-                 '(:eval (when (bound-and-true-p org-clock-current-task)
-                           (propertize (format "[%s]" org-clock-current-task)
-                                       'face 'font-lock-string-face
-                                       'help-echo "Come on!")))))
+                 "%1 "))
 
   (setq-default frame-title-format
                 '(""
                   (:eval (if (buffer-file-name)
                              (abbreviate-file-name (buffer-file-name))
-                           "%b")))))
+                           "%b"))
+                  (:eval (let ((current-layout-name (spacemacs//current-layout-name)))
+                           (if current-layout-name
+                               (concat "   🎃   [" current-layout-name "]")
+                             ""))))))
