@@ -10,14 +10,12 @@
 ;;; License: GPLv3
 
 (defconst spacemeow-packages
-  '(org-journal
-    (org :location built-in)
+  '((org :location built-in)
     (emmet-mode :location (recipe
                            :fetcher github
                            :repo "yct21/emmet-mode-css-module"))
     (spacemeow-modeline :location built-in)
     prodigy
-    ivy
     4clojure
     evil
     flycheck
@@ -30,6 +28,7 @@
     elm-mode
     lispyville
     ruby-guard
+    org-journal
     multi-term))
 
 (defconst spacemeow--directories

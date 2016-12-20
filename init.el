@@ -17,7 +17,7 @@
      github
      chrome
      markdown
-     org
+     (org :variables org-enable-org-journal-support t)
      prodigy
      (clojure :variables clojure-enable-fancify-symbols t)
      search-engine
