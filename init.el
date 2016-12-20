@@ -4,7 +4,7 @@
    dotspacemacs-configuration-layer-path '("~/code/emacs/")
    dotspacemacs-configuration-layers
    '(
-     ivy
+     helm
      (python :variables
              python-test-runner '(nose pytest))
      (auto-completion :variables
@@ -190,7 +190,6 @@ layers configuration."
   (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (spacemacs/set-leader-keys "rh" 'helm-resume)
-  (spacemacs/set-leader-keys "ri" 'ivy-resume)
   (company-quickhelp-mode -1)
   (global-set-key (kbd "C-i") 'hippie-expand)
   (setq-default global-visual-line-mode t)
@@ -204,3 +203,9 @@ layers configuration."
 
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+)
