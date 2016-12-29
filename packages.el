@@ -18,6 +18,7 @@
     prodigy
     4clojure
     evil
+    alchemist
     flycheck
     org-octopress
     wakatime-mode
