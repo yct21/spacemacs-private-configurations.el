@@ -3,4 +3,5 @@
     :defer
     :commands helm-github-stars
     :config
-    (setq helm-github-stars-username "yct21")))
+    (setq helm-github-stars-username "yct21")
+    (spacemacs/set-leader-keys "oh" 'helm-github-stars)))
