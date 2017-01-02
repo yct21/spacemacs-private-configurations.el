@@ -50,6 +50,7 @@
      colors
      ranger
      gtags
+     pdf-tools
      (spacemacs-layouts :variables layouts-enable-autosave nil
                         layouts-autosave-delay 300)
      ;; eyebrowse
