@@ -69,6 +69,7 @@
               chinese-enable-fcitx t
               chinese-enable-youdao-dict t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     xkcd
      spacemeow
      )
    dotspacemacs-additional-packages '()
