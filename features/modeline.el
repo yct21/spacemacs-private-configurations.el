@@ -16,8 +16,8 @@
 
 (defun spacemeow//window-number ()
   "Display current window number."
-  (when (bound-and-true-p window-numbering-mode)
-    (let* ((num (window-numbering-get-number))
+  (when (bound-and-true-p winum-mode)
+    (let* ((num (winum-get-number))
            (str (when num (int-to-string num))))
       (spacemeow//mode-line-unicode-number str))))
 
