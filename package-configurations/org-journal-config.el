@@ -1,6 +1,9 @@
 (with-eval-after-load 'org-journal
   (setq org-journal-dir "~/stf/")
   (spacemacs/set-leader-keys "oj" 'org-journal-new-entry)
+  (spacemacs/set-leader-keys-for-major-mode 'org-journal-mode
+    "iy" 'org-download-yank
+    "is" 'org-download-screenshot)
   )
 
 ;; (defun spacemeow/post-init-org-journal ()

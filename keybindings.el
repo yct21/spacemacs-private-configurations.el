@@ -22,3 +22,5 @@
 (global-unset-key (kbd "C-\\"))
 
 (spacemacs/set-leader-keys-for-major-mode 'inferior-emacs-lisp-mode "b" 'ielm-change-working-buffer)
+
+(global-set-key (kbd "C-t") '(lambda () (insert "-")))
