@@ -24,6 +24,7 @@
      version-control
      restclient
      elm
+     typescript
      (react :variables
             ;; js2-mode
             js2-basic-offset 2
@@ -73,7 +74,7 @@
      spacemeow
      )
    dotspacemacs-additional-packages '()
-   dotspacemacs-excluded-packages '(spaceline)
+   dotspacemacs-excluded-packages '(spaceline magithub)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
 
