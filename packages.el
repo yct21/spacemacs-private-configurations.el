@@ -27,6 +27,8 @@
     cider
     wttrin
     elm-mode
+    vue-mode
+    projectile
     lispyville
     ruby-guard
     org-journal
