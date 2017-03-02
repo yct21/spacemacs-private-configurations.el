@@ -32,6 +32,7 @@
     lispyville
     ruby-guard
     org-journal
+    nodejs-repl
     multi-term))
 
 (defconst spacemeow--directories
