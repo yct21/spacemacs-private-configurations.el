@@ -15,7 +15,6 @@
                            :fetcher github
                            :repo "yct21/emmet-mode-css-module"))
     (spacemeow-modeline :location built-in)
-    prodigy
     4clojure
     evil
     alchemist
@@ -37,7 +36,8 @@
 
 (defconst spacemeow--directories
   '("package-configurations"
-    "features"))
+    "features"
+    "prodigy-services"))
 
 
 
