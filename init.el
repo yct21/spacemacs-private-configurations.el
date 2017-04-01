@@ -74,7 +74,7 @@
      spacemeow
      )
    dotspacemacs-additional-packages '()
-   dotspacemacs-excluded-packages '(spaceline magithub)
+   dotspacemacs-excluded-packages '(spaceline magithub skewer-mode)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
 
