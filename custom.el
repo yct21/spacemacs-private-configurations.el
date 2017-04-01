@@ -26,6 +26,7 @@
      (spacemeow-image-path . "/Users/yct21/stf/images/")
      (spacemeow-image-path . "~/stf/images/")
      (spacemeow-image-path . ~/stf/images)
+     (projectile-test-suffix-function . (lambda (project-type) "" "_test"))
      (eval setq spacemeow-image-path
            (concat
             (file-name-directory load-file-name))
