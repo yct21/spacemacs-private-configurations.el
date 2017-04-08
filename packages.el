@@ -20,6 +20,7 @@
     alchemist
     flycheck
     org-octopress
+    company-flow
     wakatime-mode
     multiple-cursors
     helm-github-stars
