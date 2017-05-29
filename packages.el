@@ -32,6 +32,7 @@
     ruby-guard
     org-journal
     nodejs-repl
+    tiny
     multi-term))
 
 (defconst spacemeow--directories
