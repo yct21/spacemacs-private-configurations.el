@@ -102,10 +102,10 @@
    dotspacemacs-scratch-mode 'emacs-lisp-mode
    osx-use-dictionary-app nil
    dotspacemacs-themes '(
+                         spacemacs-light
                          solarized-light
                          solarized-dark
                          spacemacs-dark
-                         spacemacs-light
                          ;; solarized-light
                          ;; solarized-dark
                          monokai
