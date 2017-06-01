@@ -1,3 +1,11 @@
+(defun spacemeow/ignore-nil-key (origin-global-set-key &rest args)
+  "Ignore nil keybinding for global-set-key.
+   Workaround for osx layer. "
+  (when (car args)
+    (apply origin-global-set-key args)))
+
+(advice-add 'global-set-key :around #'spacemeow/ignore-nil-key)
+
 (defun dotspacemacs/layers ()
   (setq-default
    dotspacemacs-distribution 'spacemacs
@@ -52,6 +60,9 @@
      ranger
      gtags
      pdf-tools
+     (osx :variables
+          osx-command-as 'control
+          osx-control-as 'hyper)
      (spacemacs-layouts :variables layouts-enable-autosave nil
                         layouts-autosave-delay 300)
      ;; eyebrowse
@@ -94,7 +105,7 @@
                          solarized-light
                          solarized-dark
                          spacemacs-dark
-                         ;; spacemacs-light
+                         spacemacs-light
                          ;; solarized-light
                          ;; solarized-dark
                          monokai
@@ -167,11 +178,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
-  (setq mac-option-modifier 'super
-        mac-command-modifier 'meta
-        mac-command-key-is-meta t
-        mac-option-key-is-meta nil
-        system-uses-terminfo nil)
+  (setq system-uses-terminfo nil)
 
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
