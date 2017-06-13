@@ -24,7 +24,8 @@
     (spacemeow//init-org-bable-load-languages)))
 
 (defun spacemeow//config-org ()
-  (setq org-M-RET-may-split-line '((default . nil))))
+  (setq org-M-RET-may-split-line '((default . nil)))
+  (setq org-insert-heading-respect-content t))
 
 ;; http://wenshanren.org/?p=327
 ;; change it to helm
@@ -48,13 +49,13 @@
 ;;; Private functions
 (defun spacemeow//init-org-todo ()
   ;; Define the refile targets
-  (setq org-default-notes-file "~/orlog/gtd.org")
+  (setq org-default-notes-file "~/orlog/bulletjournal.org")
 
   (setq org-capture-templates
-        '(("t" "Notes" entry (file+headline "~/orlog/gtd.org" "Quick notes")
+        '(("t" "Notes" entry (file+headline "~/orlog/bulletjournal.org" "Quick notes")
            "* TODO [#B] %?\n  %i\n"
            :empty-lines 1)
-          ("l" "links" entry (file+headline "~/orlog/gtd.org" "Quick notes")
+          ("l" "links" entry (file+headline "~/orlog/bulletjournal.org" "Quick notes")
            "* TODO [#C] %?\n  %i\n %a \n %U"
            :empty-lines 1)))
 
@@ -71,8 +72,8 @@
   (setq org-log-done t)
 
   (setq org-todo-keywords
-        (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
-                (sequence "WAITING(w@/!)" "SOMEDAY(S)"  "|" "CANCELLED(c@/!)" "MEETING(m)" "PHONE(p)"))))
+        (quote ((sequence "TODO(t)" "Scheduled(s)" "DONE(d)" "Migrated(m)")
+                (sequence "Event(e)" "Note(n)"))))
 
   ;; Change task state to STARTED when clocking in
   (setq org-clock-in-switch-to-state "STARTED")

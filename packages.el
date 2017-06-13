@@ -30,7 +30,6 @@
     projectile
     lispyville
     ruby-guard
-    org-journal
     nodejs-repl
     tiny
     multi-term))

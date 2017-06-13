@@ -1,5 +1,5 @@
 (defun spacemeow/init-tiny ()
   (use-package tiny
     :defer nil
-    :init
+    :config
     (tiny-setup-default)))

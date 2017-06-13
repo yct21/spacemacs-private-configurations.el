@@ -32,7 +32,9 @@
      version-control
      restclient
      elm
-     typescript
+     floobits
+     (typescript :variables
+                 typescript-indent-level 2)
      (react :variables
             ;; js2-mode
             js2-basic-offset 2
@@ -85,7 +87,7 @@
      spacemeow
      )
    dotspacemacs-additional-packages '()
-   dotspacemacs-excluded-packages '(spaceline magithub skewer-mode)
+   dotspacemacs-excluded-packages '(spaceline magithub skewer-mode clean-aindent-mode)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
 
