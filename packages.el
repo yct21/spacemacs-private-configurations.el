@@ -20,6 +20,7 @@
     alchemist
     flycheck
     org-octopress
+    org-brain
     company-flow
     wakatime-mode
     helm-github-stars
