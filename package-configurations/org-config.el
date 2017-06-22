@@ -25,7 +25,8 @@
 
 (defun spacemeow//config-org ()
   (setq org-M-RET-may-split-line '((default . nil)))
-  (setq org-insert-heading-respect-content t))
+  (setq org-insert-heading-respect-content t)
+  (setq org-download-link-format "[[%s]]"))
 
 ;; http://wenshanren.org/?p=327
 ;; change it to helm
