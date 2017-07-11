@@ -33,3 +33,9 @@
     spacemacs//space-doc-org-kbd-face-remap
     spacemacs//space-doc-resize-inline-images
     spacemacs//space-doc-advice-org-do-emphasis-faces))
+
+(let ((secret-config-file
+      (format "%s%s"
+              (file-name-directory load-file-name)
+              "config.secret.el")))
+  (load-file secret-config-file))

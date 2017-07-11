@@ -11,7 +11,7 @@
    dotspacemacs-distribution 'spacemacs
    dotspacemacs-configuration-layer-path '("~/code/emacs/")
    dotspacemacs-configuration-layers
-   '(
+   '(swift
      helm
      (python :variables
              python-test-runner '(nose pytest))
@@ -22,7 +22,8 @@
 
      emacs-lisp
      dash
-     github
+     (github :variables
+             magithub-api-timeout 3)
      chrome
      markdown
      (org :variables org-enable-org-journal-support t)
@@ -87,7 +88,7 @@
      spacemeow
      )
    dotspacemacs-additional-packages '()
-   dotspacemacs-excluded-packages '(spaceline magithub skewer-mode clean-aindent-mode)
+   dotspacemacs-excluded-packages '(spaceline skewer-mode clean-aindent-mode)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
 
