@@ -12,7 +12,8 @@
    dotspacemacs-configuration-layer-path '("~/code/emacs/")
    dotspacemacs-configuration-layers
    '(swift
-     helm
+     haskell
+     spacemacs-ivy
      (python :variables
              python-test-runner '(nose pytest))
      (auto-completion :variables
@@ -160,9 +161,9 @@
 
 (defun dotspacemacs/user-init ()
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-          ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-          ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
+        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "http://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; We use fixed-font everywhere.
   (setq solarized-use-variable-pitch nil

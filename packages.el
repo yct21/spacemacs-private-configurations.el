@@ -19,7 +19,6 @@
     evil
     alchemist
     flycheck
-    org-octopress
     org-brain
     company-flow
     wakatime-mode
