@@ -15,6 +15,10 @@
                            :fetcher github
                            :repo "yct21/emmet-mode"
                            :branch "upgrade-snippets"))
+    (tide :location (recipe
+                     :fetcher github
+                     :repo "robbert-vdh/tide"
+                     :branch "feature/indirect-buffer-support"))
     (spacemeow-modeline :location built-in)
     4clojure
     evil
