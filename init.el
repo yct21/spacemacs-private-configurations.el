@@ -13,13 +13,14 @@
    dotspacemacs-configuration-layers
    '(swift
      haskell
-     spacemacs-ivy
+     ivy
      (python :variables
              python-test-runner '(nose pytest))
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t)
+                      auto-completion-enable-snippets-in-popup t
+                      :disabled-for org markdown)
 
      emacs-lisp
      dash
@@ -27,7 +28,8 @@
              magithub-api-timeout 3)
      chrome
      markdown
-     (org :variables org-enable-org-journal-support t)
+     (org :variables
+          org-enable-reveal-js-support t)
      prodigy
      (clojure :variables clojure-enable-fancify-symbols t)
      search-engine
@@ -66,7 +68,9 @@
      pdf-tools
      (osx :variables
           osx-command-as 'control
-          osx-control-as 'hyper)
+          osx-option-as 'none
+          osx-control-as 'meta
+          osx-function-as 'hyper)
      (spacemacs-layouts :variables layouts-enable-autosave nil
                         layouts-autosave-delay 300)
      ;; eyebrowse
@@ -205,7 +209,6 @@ layers configuration."
   (spacemacs/toggle-automatic-symbol-highlight-on)
   (spacemacs/set-leader-keys "rh" 'helm-resume)
   (company-quickhelp-mode -1)
-  (global-set-key (kbd "C-i") 'hippie-expand)
   (setq-default global-visual-line-mode t)
 
   ;; set configurations for tramp

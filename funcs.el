@@ -42,27 +42,40 @@
 ;; Screenshot
 (defvar-local spacemeow-image-path nil)
 
-(defun spacemeow/capture-screenshot (base-name)
+(defun spacemeow//insert-org-or-md-img-link (prefix imagename)
+  (if (equal (file-name-extension (buffer-file-name)) "org")
+      (insert (format "[[%s%s]]" prefix imagename))
+    (insert (format "![%s](%s%s)" imagename prefix imagename))))
+
+(defun spacemeow/capture-screenshot (basename)
   "Take a screenshot into a timestamped unique-named file in the specified image path insert a link to this file."
   (interactive "sScreenshot name: ")
-  (if spacemeow-image-path
-      (let* ((base-name (if (equal base-name "")
-                            (format-time-string "%Y%m%d_%H%M%S")
-                          base-name))
-             (full-path (concat spacemeow-image-path
-                                base-name
-                                ".png"))
-             (resize-command-str (format "convert %s -resize 800x600 %s" full-path full-path)))
-
-        (if (file-exists-p (file-name-directory full-path))
+  (if (equal basename "")
+      (setq basename (format-time-string "%Y%m%d_%H%M%S")))
+  (setq fullpath
+        (concat (file-name-directory (buffer-file-name))
+                "../assets/"
+                (file-name-base (buffer-file-name))
+                "_"
+                basename))
+  (setq relativepath
+        (concat (file-name-base (buffer-file-name))
+                "_"
+                basename
+                ".png"))
+  (if (file-exists-p (file-name-directory fullpath))
+      (progn
+        (setq final-image-full-path (concat fullpath ".png"))
+        (call-process "screencapture" nil nil nil "-s" final-image-full-path)
+        (if (executable-find "convertt")
             (progn
-              (call-process "screencapture" nil nil nil "-s" full-path)
-              (if (executable-find "convert")
-                  (shell-command-to-string resize-command-str))
-              (insert (format "[[%s]]" full-path))
-              (spacemeow/display-system-notification "Image captured" (format "stored in %s" full-path)))
-          (message "No such folder for storing image.")))
-  (message "No image folder specified")))
+              (setq resize-command-str (format "convert %s -resize 800x600 %s" final-image-full-path final-image-full-path))
+              (shell-command-to-string resize-command-str)))
+        (spacemeow//insert-org-or-md-img-link "../../assets/" relativepath))
+    (progn
+      (call-process "screencapture" nil nil nil "-s" (concat basename ".png"))
+      (spacemeow//insert-org-or-md-img-link "./" (concat basename ".png"))))
+  (insert "\n"))
 
 
 ;; Notification
