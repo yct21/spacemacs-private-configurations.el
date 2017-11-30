@@ -13,13 +13,14 @@
   '((org :location built-in)
     (emmet-mode :location (recipe
                            :fetcher github
-                           :repo "yct21/emmet-mode-css-module"))
+                           :repo "yct21/emmet-mode"
+                           :branch "upgrade-snippets"))
     (spacemeow-modeline :location built-in)
     4clojure
     evil
     alchemist
     flycheck
-    org-brain
+    org-reveal
     company-flow
     wakatime-mode
     helm-github-stars
@@ -29,7 +30,6 @@
     vue-mode
     projectile
     lispyville
-    ruby-guard
     nodejs-repl
     tiny
     multi-term))
