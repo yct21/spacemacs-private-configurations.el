@@ -13,6 +13,7 @@
    dotspacemacs-configuration-layers
    '(swift
      haskell
+     themes-megapack
      ivy
      (python :variables
              python-test-runner '(nose pytest))
@@ -29,6 +30,7 @@
      chrome
      markdown
      (org :variables
+          org-enable-github-support t
           org-enable-reveal-js-support t)
      prodigy
      (clojure :variables clojure-enable-fancify-symbols t)
@@ -110,10 +112,10 @@
    dotspacemacs-scratch-mode 'emacs-lisp-mode
    osx-use-dictionary-app nil
    dotspacemacs-themes '(
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
-                         spacemacs-dark
                          ;; solarized-light
                          ;; solarized-dark
                          monokai
@@ -164,7 +166,7 @@
    ))
 
 (defun dotspacemacs/user-init ()
-  (setq configuration-layer--elpa-archives
+  (setq configuration-layer-elpa-archives
         '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
           ("org-cn"   . "http://elpa.emacs-china.org/org/")
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))

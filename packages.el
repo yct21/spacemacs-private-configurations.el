@@ -20,15 +20,20 @@
                      :repo "robbert-vdh/tide"
                      :branch "feature/indirect-buffer-support"))
     (spacemeow-modeline :location built-in)
+    (org-opml :location (recipe
+                         :fetcher github
+                         :repo "org-opml/org-opml"))
     4clojure
     evil
     alchemist
     flycheck
+    typescript
     org-reveal
     company-flow
     wakatime-mode
     helm-github-stars
     cider
+    indium
     wttrin
     elm-mode
     vue-mode
@@ -40,8 +45,7 @@
 
 (defconst spacemeow--directories
   '("package-configurations"
-    "features"
-    "prodigy-services"))
+    "features"))
 
 
 
