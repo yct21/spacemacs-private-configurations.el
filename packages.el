@@ -21,9 +21,6 @@
                      :branch "feature/indirect-buffer-support"))
     (spacemeow-modeline :location built-in)
     org-alert
-    (org-opml :location (recipe
-                         :fetcher github
-                         :repo "org-opml/org-opml"))
     (org-wiki :location (recipe
                          :fetcher github
                          :repo "yct21/org-wiki"))
