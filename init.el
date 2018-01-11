@@ -95,7 +95,7 @@
      xkcd
      spacemeow
      )
-   dotspacemacs-additional-packages '(org-journal)
+   dotspacemacs-additional-packages '()
    dotspacemacs-excluded-packages '(spaceline skewer-mode clean-aindent-mode)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
