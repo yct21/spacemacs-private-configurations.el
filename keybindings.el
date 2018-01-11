@@ -15,7 +15,7 @@
 
 (global-set-key (kbd "C-l") 'tab-to-tab-stop)
 
-(spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/bulletjournal.org")))
+(spacemacs/set-leader-keys "og" '(lambda () (interactive) (find-file "~/orlog/gtd.org")))
 
 (spacemacs/set-leader-keys "oi" 'spacemeow/capture-screenshot)
 

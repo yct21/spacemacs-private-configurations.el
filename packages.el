@@ -20,15 +20,20 @@
                      :repo "robbert-vdh/tide"
                      :branch "feature/indirect-buffer-support"))
     (spacemeow-modeline :location built-in)
+    org-alert
     (org-opml :location (recipe
                          :fetcher github
                          :repo "org-opml/org-opml"))
+    (org-wiki :location (recipe
+                         :fetcher github
+                         :repo "yct21/org-wiki"))
     4clojure
     evil
     alchemist
     flycheck
     typescript
     org-reveal
+    org-journal
     company-flow
     wakatime-mode
     helm-github-stars

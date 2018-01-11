@@ -31,6 +31,7 @@
      markdown
      (org :variables
           org-enable-github-support t
+          org-enable-org-journal-support t
           org-enable-reveal-js-support t)
      prodigy
      (clojure :variables clojure-enable-fancify-symbols t)
@@ -94,7 +95,7 @@
      xkcd
      spacemeow
      )
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(org-journal)
    dotspacemacs-excluded-packages '(spaceline skewer-mode clean-aindent-mode)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
