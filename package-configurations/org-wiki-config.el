@@ -55,7 +55,6 @@
 #+DESCRIPTION:
 #+KEYWORDS:
 #+STARTUP:  content
-#+DATE: %d
 #+INCLUDE: assets/style.org
 
 - [[wiki:index][Index]]
