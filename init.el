@@ -96,7 +96,7 @@
      spacemeow
      )
    dotspacemacs-additional-packages '()
-   dotspacemacs-excluded-packages '(spaceline skewer-mode clean-aindent-mode)
+   dotspacemacs-excluded-packages '(spaceline skewer-mode clean-aindent-mode evil-lisp-state)
    dotspacemacs-download-packages 'used
    dotspacemacs-delete-orphan-packages t))
 
