@@ -4,6 +4,7 @@
     (setq org-wiki-location "~/mini-galaxy")
     (setq org-wiki-server-port "4224")
     (spacemeow//define-org-wiki-keybindings)
+    (spacemeow//define-org-wiki-template)
 
     ;; https://github.com/caiorss/org-wiki/issues/14
     (eval-after-load "grep"
@@ -44,3 +45,21 @@
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "wci" 'org-wiki-copy-index-html)
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "wca" 'org-wiki-copy-asset-path)
   )
+
+(defun spacemeow//define-org-wiki-template ()
+  (setq org-wiki-template
+     (string-trim
+         "
+#+TITLE: %n
+#+DESCRIPTION:
+#+KEYWORDS:
+#+STARTUP:  content
+#+DATE: %d
+#+INCLUDE: assets/style.org
+
+- [[wiki:index][Index]]
+
+- Related:
+
+* %n
+")))
