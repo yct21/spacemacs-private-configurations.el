@@ -40,6 +40,7 @@
      restclient
      elm
      floobits
+     pandoc
      (typescript :variables
                  typescript-indent-level 2)
      (react :variables
