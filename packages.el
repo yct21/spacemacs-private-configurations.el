@@ -15,10 +15,7 @@
                            :fetcher github
                            :repo "yct21/emmet-mode"
                            :branch "upgrade-snippets"))
-    (tide :location (recipe
-                     :fetcher github
-                     :repo "robbert-vdh/tide"
-                     :branch "feature/indirect-buffer-support"))
+    tide
     (spacemeow-modeline :location built-in)
     org-alert
     (org-wiki :location (recipe
