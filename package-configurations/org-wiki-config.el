@@ -36,15 +36,14 @@
   (spacemacs/set-leader-keys "ke" 'org-wiki-export-html)
   (spacemacs/set-leader-keys "kt" 'org-wiki-server-toggle)
   (spacemacs/set-leader-keys "ko" 'org-wiki-index-html)
-  (spacemacs/declare-prefix "ks" "search")
-  (spacemacs/set-leader-keys "ksp" 'org-wiki-search)
-  (spacemacs/set-leader-keys "kss" 'org-wiki-occur)
   (spacemacs/set-leader-keys "ksk" 'org-wiki-keywords)
   (spacemacs/set-leader-keys "kl" 'org-wiki-desc)
   (spacemacs/declare-prefix "kc" "copy-path")
   (spacemacs/set-leader-keys "kcl" 'org-wiki-copy-location)
   (spacemacs/set-leader-keys "kci" 'org-wiki-copy-index-html)
   (spacemacs/set-leader-keys "kca" 'org-wiki-copy-asset-path)
+
+  (spacemacs/set-leader-keys "ks" 'spacemeow//org-wiki-search)
   )
 
 (defun spacemeow//define-org-wiki-template ()
@@ -63,3 +62,7 @@
 
 * %n
 ")))
+
+(defun spacemeow//org-wiki-search ()
+  (interactive)
+  (helm-org-rifle-directories '("~/mini-galaxy")))

@@ -28,6 +28,7 @@
     typescript
     org-reveal
     org-journal
+    helm-org-rifle
     company-flow
     wakatime-mode
     helm-github-stars
