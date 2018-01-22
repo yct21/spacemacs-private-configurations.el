@@ -88,6 +88,6 @@
 
 (defun spacemeow/copy-as-org()
   (interactive)
-  (let ((str (shell-command-to-string "osascript -e 'the clipboard as \"HTML\"' | perl -ne 'print chr foreach unpack(\"C*\",pack(\"H*\",substr($_,11,-3)))' | pandoc -f html -t json --wrap=none | pandoc -f json -t org --wrap=none"))))
-  (kill-new )
-  (yank))
+  (let ((str (shell-command-to-string "osascript -e 'the clipboard as \"HTML\"' | perl -ne 'print chr foreach unpack(\"C*\",pack(\"H*\",substr($_,11,-3)))' | pandoc -f html -t json --wrap=none | pandoc -f json -t org --wrap=none")))
+    (kill-new str)
+    (yank)))
