@@ -111,7 +111,7 @@
    dotspacemacs-startup-banner 'official
    dotspacemacs-startup-lists '(bookmarks projects)
    dotspacemacs-startup-recent-list-size 5
-   dotspacemacs-scratch-mode 'emacs-lisp-mode
+   dotspacemacs-scratch-mode 'text-mode
    osx-use-dictionary-app nil
    dotspacemacs-themes '(
                          spacemacs-dark
