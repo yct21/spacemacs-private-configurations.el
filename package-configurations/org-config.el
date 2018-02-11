@@ -20,10 +20,11 @@
     (spacemeow//init-org-agenda)
     (spacemeow//init-org-todo)
     (spacemeow//init-org-pomodoro)
-    (spacemeow//init-org-keybindings)
-    (spacemeow//init-org-bable-load-languages)))
+    (spacemeow//init-org-keybindings)))
 
 (defun spacemeow//config-org ()
+  (add-hook 'org-mode-hook 'turn-off-auto-fill)
+  (add-hook 'org-mode-hook 'spacemeow//set-org-download-dir)
   (setq org-M-RET-may-split-line '((default . nil)))
   (setq org-insert-heading-respect-content t)
   (setq org-download-link-format "[[%s]]"))
@@ -122,19 +123,6 @@
     (add-hook 'org-pomodoro-finished-hook #'(lambda() (spacemeow/display-system-notification "Pomodoro finished" "Get a rest.")))
     (add-hook 'org-pomodoro-break-finished-hook #'(lambda() (spacemeow/display-system-notification "Break finished" "Come on!")))))
 
-(defun spacemeow//init-org-bable-load-languages ()
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((perl . t)
-     (ruby . t)
-     (sh . t)
-     (js . t)
-     (python . t)
-     (emacs-lisp . t)
-     (plantuml . t)
-     (C . t)
-     (ditaa . t))))
-
 (defun spacemeow//org-pomodoro-write-start-time ()
   (let ((file-name "/Users/yct21/temp/.pomodoro"))
     (with-temp-file file-name
@@ -171,3 +159,10 @@
     (when (member org-state org-done-keywords)
       (org-reset-subtask-state-maybe)
       (org-update-statistics-cookies t))))
+
+
+
+;;; org-download configuration
+(defun spacemeow//set-org-download-dir ()
+  (setq org-download-image-dir (file-name-sans-extension (buffer-file-name)))
+  (setq org-download-heading-lvl nil))

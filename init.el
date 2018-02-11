@@ -13,7 +13,6 @@
    dotspacemacs-configuration-layers
    '(swift
      haskell
-     themes-megapack
      ivy
      (python :variables
              python-test-runner '(nose pytest))
@@ -114,15 +113,8 @@
    dotspacemacs-scratch-mode 'text-mode
    osx-use-dictionary-app nil
    dotspacemacs-themes '(
-                         spacemacs-dark
                          spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         ;; solarized-light
-                         ;; solarized-dark
-                         monokai
-                         leuven
-                         ;; zenburn
+                         spacemacs-dark
                          )
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"

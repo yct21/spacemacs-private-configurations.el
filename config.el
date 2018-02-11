@@ -39,3 +39,7 @@
               (file-name-directory load-file-name)
               "config.secret.el")))
   (load-file secret-config-file))
+
+;; appearence
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . 'nil))
